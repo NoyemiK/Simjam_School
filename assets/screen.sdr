@@ -1,0 +1,15 @@
+extern number time;
+extern Image d_map;
+
+vec4 effect(vec4 color, Image texture, vec2 texture_coords, vec2 screen_coords){
+    
+    vec4 disp_p = Texel(d_map, texture_coords); // get the displacement pixel
+    vec2 p = vec2(floor(gl_FragCoord.x), floor(gl_FragCoord.y));
+    float direction = disp_p.r * (float(mod(p.y, 2.0) == 0.0));
+    
+    number sin_mod = texture_coords.y * 3.14;
+    number mod = 0.01 * ( sin(time + sin_mod) ) * direction;
+    texture_coords.x -= mod;
+    
+    return Texel(texture, texture_coords) * color;
+  }

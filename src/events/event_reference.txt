@@ -1,0 +1,41 @@
+===PROJECTS===
+
+{
+  name = "",
+  desc = "",
+  conditions = {
+    GAME_TIME = {},
+    PLAYER_PERFORMANCE = {},
+    PLAYER_ID = {}
+    PLAYER_TRAIT = {}
+  }
+  completion_time = 0,
+  reward = "",
+  special_flag = true,
+  event = ""
+},
+
+NAME       - the name of the project
+DESC       - Description of the project
+
+CONDITIONS - Conditions that need to be fulfilled for the project to be available. If empty, it means this is not a requirement
+  GAME_TIME specifies a week, day, and year that a project becomes available
+  PLAYER_PERFORMANCE specifies stats a player must have
+  PLAYER_ID specifies whether it is for T. Vandross, D. Nail, or L. Extal
+  PLAYER_TRAIT specifies traits a player must have
+  
+COMPLETION TIME - How long it takes to complete a project (at a rate of 4 time-units/day)
+
+REWARD - Trait that a project gives the player
+
+REPEAT_FLAG - a flag that causes "completed" to never be marked
+
+EVENT - index of the event that it procs
+
+===EVENTS===
+
+{
+  title = "",
+  text  = "",
+  choices = {"OK"}
+}
